@@ -1,0 +1,2 @@
+devinryback@MacBookPro my_folder % cd ..
+devinryback@MacBookPro ~ % rm -r my_folder

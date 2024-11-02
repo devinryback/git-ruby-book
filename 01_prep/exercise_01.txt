@@ -1,0 +1,10 @@
+devinryback@MacBookPro ~ % mkdir my_folder
+devinryback@MacBookPro ~ % cd my_folder
+devinryback@MacBookPro my_folder % touch one.rb two.rb
+devinryback@MacBookPro my_folder % ls
+one.rb  two.rb
+devinryback@MacBookPro my_folder % open one.rb two.rb
+devinryback@MacBookPro my_folder % ruby one.rb
+this is file one
+devinryback@MacBookPro my_folder % ruby two.rb
+this is file two
