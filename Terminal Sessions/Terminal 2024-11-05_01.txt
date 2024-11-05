@@ -508,12 +508,138 @@ irb(main):006:0> puts x
         from /opt/homebrew/Cellar/ruby@3.2/3.2.5/lib/ruby/gems/3.2.0/gems/irb-1.6.2/exe/irb:11:in `<top (required)>'       
         from /opt/homebrew/opt/ruby@3.2/bin/irb:25:in `load'
         from /opt/homebrew/opt/ruby@3.2/bin/irb:25:in `<main>'
-irb(main):007:0> 
-                                                   
-                                                   
-                                                   
-                                                 
-                                                 
-                                                 
-                                                 
-                                                 
+irb(main):007:0> exit
+devinryback@STARSHIP 03_variables % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   ../02_basics/exercise_01.txt
+	new file:   ../02_basics/exercise_02.txt
+	new file:   ../02_basics/exercise_03.txt
+	new file:   ../02_basics/exercise_04.txt
+	new file:   ../02_basics/exercise_05.txt
+	new file:   ../02_basics/exercise_06.txt
+	new file:   ../02_basics/exercise_07.txt
+	renamed:    ../02_basics/exercise_01.rb -> exercise_02.rb
+	new file:   exercise_03.rb
+	new file:   exercise_04.rb
+	new file:   exercise_05.rb
+	new file:   ../Terminal Sessions/Terminal 2024-11-02_01.txt
+	new file:   ../Terminal Sessions/Terminal 2024-11-04_01.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    exercise_01.rb
+	deleted:    exercise_02.rb
+	deleted:    exercise_03.rb
+	deleted:    exercise_04.rb
+	deleted:    exercise_05.rb
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	exercise_01_name_01.rb
+	exercise_02_age.rb
+	exercise_03_name_02.rb
+	exercise_04_name_03.rb
+	exercise_05.txt
+	../Terminal Sessions/Terminal 2024-11-05_01.txt
+
+devinryback@STARSHIP 03_variables % cd ..
+devinryback@STARSHIP git_ruby_intro_book % git add --all
+devinryback@STARSHIP git_ruby_intro_book % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    02_basics/exercise_01.rb
+	new file:   02_basics/exercise_01.txt
+	new file:   02_basics/exercise_02.txt
+	new file:   02_basics/exercise_03.txt
+	new file:   02_basics/exercise_04.txt
+	new file:   02_basics/exercise_05.txt
+	new file:   02_basics/exercise_06.txt
+	new file:   02_basics/exercise_07.txt
+	deleted:    03_variables/exercise_01.rb
+	new file:   03_variables/exercise_01_name_01.rb
+	new file:   03_variables/exercise_02_age.rb
+	new file:   03_variables/exercise_03_name_02.rb
+	new file:   03_variables/exercise_04_name_03.rb
+	new file:   03_variables/exercise_05.txt
+	new file:   Terminal Sessions/Terminal 2024-11-02_01.txt
+	new file:   Terminal Sessions/Terminal 2024-11-04_01.txt
+	new file:   Terminal Sessions/Terminal 2024-11-05_01.txt
+
+devinryback@STARSHIP git_ruby_intro_book % git commit -m
+error: switch `m' requires a value
+devinryback@STARSHIP git_ruby_intro_book % git commit -m "Add completed exercises for 02 Basics and 03 Variables
+dquote> "
+[main 620c374] Add completed exercises for 02 Basics and 03 Variables
+ 17 files changed, 1866 insertions(+)
+ delete mode 100644 02_basics/exercise_01.rb
+ create mode 100644 02_basics/exercise_01.txt
+ create mode 100644 02_basics/exercise_02.txt
+ create mode 100644 02_basics/exercise_03.txt
+ create mode 100644 02_basics/exercise_04.txt
+ create mode 100644 02_basics/exercise_05.txt
+ create mode 100644 02_basics/exercise_06.txt
+ create mode 100644 02_basics/exercise_07.txt
+ delete mode 100644 03_variables/exercise_01.rb
+ create mode 100644 03_variables/exercise_01_name_01.rb
+ create mode 100644 03_variables/exercise_02_age.rb
+ create mode 100644 03_variables/exercise_03_name_02.rb
+ create mode 100644 03_variables/exercise_04_name_03.rb
+ create mode 100644 03_variables/exercise_05.txt
+ create mode 100644 Terminal Sessions/Terminal 2024-11-02_01.txt
+ create mode 100644 Terminal Sessions/Terminal 2024-11-04_01.txt
+ create mode 100644 Terminal Sessions/Terminal 2024-11-05_01.txt
+devinryback@STARSHIP git_ruby_intro_book % git log
+commit 620c374ebf3d003d31aba48f6bf37813d352574e (HEAD -> main)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Tue Nov 5 18:33:46 2024 -0500
+
+    Add completed exercises for 02 Basics and 03 Variables
+
+commit 184a6813193509b9de9f5773bae8aeb28b1b3280 (origin/main)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Sat Nov 2 17:03:57 2024 -0400
+
+    Add completed exercises
+
+commit 12784fec65d8d0122e06e3458b40662fc0c9099f
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Sat Nov 2 15:28:06 2024 -0400
+
+    Add initial files
+devinryback@STARSHIP git_ruby_intro_book % git push
+Enumerating objects: 23, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (20/20), done.
+Writing objects: 100% (20/20), 14.10 KiB | 7.05 MiB/s, done.
+Total 20 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+To https://github.com/devinryback/git_ruby_intro_book.git
+   184a681..620c374  main -> main
+devinryback@STARSHIP git_ruby_intro_book % git log
+commit 620c374ebf3d003d31aba48f6bf37813d352574e (HEAD -> main, origin/main)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Tue Nov 5 18:33:46 2024 -0500
+
+    Add completed exercises for 02 Basics and 03 Variables
+
+commit 184a6813193509b9de9f5773bae8aeb28b1b3280
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Sat Nov 2 17:03:57 2024 -0400
+
+    Add completed exercises
+
+commit 12784fec65d8d0122e06e3458b40662fc0c9099f
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Sat Nov 2 15:28:06 2024 -0400
+
+    Add initial files
+devinryback@STARSHIP git_ruby_intro_book % 
