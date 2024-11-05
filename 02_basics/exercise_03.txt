@@ -1,0 +1,3 @@
+movies = {:mov1 => 1992, :mov2 => 1995, :mov3 => 2000, :mov4 => 2001, :mov5 => 2005}
+
+movies.each { |t, y| puts y}

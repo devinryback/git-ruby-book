@@ -1,0 +1,962 @@
+Last login: Sat Nov  2 09:37:20 on ttys001
+devinryback@MacBookPro projects % cd ~
+devinryback@MacBookPro ~ % ruby -v
+ruby 3.2.5 (2024-07-26 revision 31d0f1a2e7) [arm64-darwin24]
+devinryback@MacBookPro ~ % ls
+Applications		Library			TMM
+Desktop			Movies			git_basics
+Developer		Music			iCloud Drive (Archive)
+Documents		Pictures		projects
+Downloads		Public
+Dropbox			Standard Notes Backups
+devinryback@MacBookPro ~ % cd projects
+devinryback@MacBookPro projects % ls
+hello_world.rb
+devinryback@MacBookPro projects % cd ..
+devinryback@MacBookPro ~ % rm projects
+rm: projects: is a directory
+devinryback@MacBookPro ~ % rm -a projects
+rm: illegal option -- a
+usage: rm [-f | -i] [-dIPRrvWx] file ...
+       unlink [--] file
+devinryback@MacBookPro ~ % rm -r projects
+devinryback@MacBookPro ~ % ls
+Applications		Dropbox			Public
+Desktop			Library			Standard Notes Backups
+Developer		Movies			TMM
+Documents		Music			git_basics
+Downloads		Pictures		iCloud Drive (Archive)
+devinryback@MacBookPro ~ % mkdir new_dir
+devinryback@MacBookPro ~ % ls
+Applications		Library			TMM
+Desktop			Movies			git_basics
+Developer		Music			iCloud Drive (Archive)
+Documents		Pictures		new_dir
+Downloads		Public
+Dropbox			Standard Notes Backups
+devinryback@MacBookPro ~ % cd new_dir
+devinryback@MacBookPro new_dir % touch new_file.rb
+devinryback@MacBookPro new_dir % ls
+new_file.rb
+devinryback@MacBookPro new_dir % rm new_file.rb
+devinryback@MacBookPro new_dir % ls
+devinryback@MacBookPro new_dir % cd ..
+devinryback@MacBookPro ~ % rmdir new_dir
+devinryback@MacBookPro ~ % ls
+Applications		Dropbox			Public
+Desktop			Library			Standard Notes Backups
+Developer		Movies			TMM
+Documents		Music			git_basics
+Downloads		Pictures		iCloud Drive (Archive)
+devinryback@MacBookPro ~ % mkdir new_dir
+devinryback@MacBookPro ~ % ls
+Applications		Library			TMM
+Desktop			Movies			git_basics
+Developer		Music			iCloud Drive (Archive)
+Documents		Pictures		new_dir
+Downloads		Public
+Dropbox			Standard Notes Backups
+devinryback@MacBookPro ~ % touch new_dir/new_file.rb
+devinryback@MacBookPro ~ % ls
+Applications		Library			TMM
+Desktop			Movies			git_basics
+Developer		Music			iCloud Drive (Archive)
+Documents		Pictures		new_dir
+Downloads		Public
+Dropbox			Standard Notes Backups
+devinryback@MacBookPro ~ % cd new_dir
+devinryback@MacBookPro new_dir % ls
+new_file.rb
+devinryback@MacBookPro new_dir % cd ..
+devinryback@MacBookPro ~ % rm -r new_dir
+devinryback@MacBookPro ~ % ls
+Applications		Dropbox			Public
+Desktop			Library			Standard Notes Backups
+Developer		Movies			TMM
+Documents		Music			git_basics
+Downloads		Pictures		iCloud Drive (Archive)
+devinryback@MacBookPro ~ % irb
+irb(main):001:0> puts "Hello World!"
+Hello World!
+=> nil                                           
+irb(main):002:0> exit
+devinryback@MacBookPro ~ % gem install pry
+Fetching pry-0.14.2.gem
+Fetching coderay-1.1.3.gem
+Fetching method_source-1.1.0.gem
+Successfully installed method_source-1.1.0
+Successfully installed coderay-1.1.3
+Successfully installed pry-0.14.2
+Parsing documentation for method_source-1.1.0
+Installing ri documentation for method_source-1.1.0
+invalid options: -SNw2
+(invalid options are ignored)
+Parsing documentation for coderay-1.1.3
+Installing ri documentation for coderay-1.1.3
+Parsing documentation for pry-0.14.2
+Installing ri documentation for pry-0.14.2
+Done installing documentation for method_source, coderay, pry after 1 seconds
+3 gems installed
+
+A new release of RubyGems is available: 3.5.16 → 3.5.22!
+Run `gem update --system 3.5.22` to update your installation.
+
+devinryback@MacBookPro ~ % gem update --system 3.5.22
+Fetching rubygems-update-3.5.22.gem
+Successfully installed rubygems-update-3.5.22
+Parsing documentation for rubygems-update-3.5.22
+Installing ri documentation for rubygems-update-3.5.22
+Done installing documentation for rubygems-update after 0 seconds
+Parsing documentation for rubygems-update-3.5.22
+Done installing documentation for rubygems-update after 0 seconds
+Installing RubyGems 3.5.22
+  Successfully built RubyGem
+  Name: bundler
+  Version: 2.5.22
+  File: bundler-2.5.22.gem
+Bundler 2.5.22 installed
+RubyGems 3.5.22 installed
+Regenerating binstubs
+Regenerating plugins
+Parsing documentation for rubygems-3.5.22
+Installing ri documentation for rubygems-3.5.22
+
+# 3.5.22 / 2024-10-16
+
+## Enhancements:
+
+* Prevent `._*` files in packages generated from macOS. Pull request
+  [#8150](https://github.com/rubygems/rubygems/pull/8150) by
+  deivid-rodriguez
+* Fix `gem pristine etc` resetting gem twice sometimes. Pull request
+  [#8117](https://github.com/rubygems/rubygems/pull/8117) by
+  deivid-rodriguez
+* Allow `gem pristine` to reset default gems too. Pull request
+  [#8118](https://github.com/rubygems/rubygems/pull/8118) by
+  deivid-rodriguez
+* Update vendored `uri` and `net-http`. Pull request
+  [#8112](https://github.com/rubygems/rubygems/pull/8112) by segiddins
+* Installs bundler 2.5.22 as a default gem.
+
+## Bug fixes:
+
+* Fix `gem contents` for default gems. Pull request
+  [#8132](https://github.com/rubygems/rubygems/pull/8132) by
+  deivid-rodriguez
+* Fix duplicated specs when they have been previously activated. Pull
+  request [#8131](https://github.com/rubygems/rubygems/pull/8131) by
+  deivid-rodriguez
+* Fix `gem install` on NFS shares. Pull request
+  [#8123](https://github.com/rubygems/rubygems/pull/8123) by
+  deivid-rodriguez
+* Fix a `gem install` crash during "done installing" hooks. Pull request
+  [#8113](https://github.com/rubygems/rubygems/pull/8113) by
+  deivid-rodriguez
+* Fix plugin command loading. Pull request
+  [#8121](https://github.com/rubygems/rubygems/pull/8121) by
+  deivid-rodriguez
+
+# 3.5.21 / 2024-10-03
+
+## Enhancements:
+
+* Fix `Gem::MissingSpecVersionError#to_s` not showing exception message.
+  Pull request [#8074](https://github.com/rubygems/rubygems/pull/8074) by
+  deivid-rodriguez
+* Remove code that makes suggest_gems_from_name give worse results. Pull
+  request [#8083](https://github.com/rubygems/rubygems/pull/8083) by
+  duckinator
+* Warning about PATH in `--user-install` mode is only necessary for gems
+  with executables. Pull request
+  [#8071](https://github.com/rubygems/rubygems/pull/8071) by
+  deivid-rodriguez
+* Installs bundler 2.5.21 as a default gem.
+
+## Bug fixes:
+
+* Fix error in one source when fetching dependency APIs clearing results
+  from all sources. Pull request
+  [#8080](https://github.com/rubygems/rubygems/pull/8080) by
+  deivid-rodriguez
+* Fix `gem cleanup` warning when two versions of psych installed. Pull
+  request [#8072](https://github.com/rubygems/rubygems/pull/8072) by
+  deivid-rodriguez
+
+# 3.5.20 / 2024-09-24
+
+## Enhancements:
+
+* Installs bundler 2.5.20 as a default gem.
+
+# 3.5.19 / 2024-09-18
+
+## Enhancements:
+
+* Standardize pretty-print output for `Gem::Source` and subclasses. Pull
+  request [#7994](https://github.com/rubygems/rubygems/pull/7994) by
+  djberube
+* Update vendored `molinillo` to master and vendored `resolv` to 0.4.0.
+  Pull request [#7521](https://github.com/rubygems/rubygems/pull/7521) by
+  hsbt
+* Installs bundler 2.5.19 as a default gem.
+
+## Bug fixes:
+
+* Fix `bundle exec rake install` failing when local gem has extensions.
+  Pull request [#7977](https://github.com/rubygems/rubygems/pull/7977) by
+  deivid-rodriguez
+* Make `gem exec` use the standard GEM_HOME. Pull request
+  [#7982](https://github.com/rubygems/rubygems/pull/7982) by
+  deivid-rodriguez
+* Fix `gem fetch` always exiting with zero status code. Pull request
+  [#8007](https://github.com/rubygems/rubygems/pull/8007) by
+  deivid-rodriguez
+* Remove temporary `.lock` files unintentionally left around by gem
+  installer. Pull request
+  [#7939](https://github.com/rubygems/rubygems/pull/7939) by nobu
+* Removed unused stringio. Pull request
+  [#8001](https://github.com/rubygems/rubygems/pull/8001) by hsbt
+* Avoid another race condition of open mode. Pull request
+  [#7931](https://github.com/rubygems/rubygems/pull/7931) by nobu
+* Fix `@license` typo preventing licenses from being correctly
+  unmarshalled. Pull request
+  [#7975](https://github.com/rubygems/rubygems/pull/7975) by djberube
+
+## Performance:
+
+* Fix `gem install does-not-exist` being super slow. Pull request
+  [#8006](https://github.com/rubygems/rubygems/pull/8006) by
+  deivid-rodriguez
+
+# 3.5.18 / 2024-08-26
+
+## Enhancements:
+
+* Installs bundler 2.5.18 as a default gem.
+
+## Bug fixes:
+
+* Fix `gem uninstall <name>:<version>` failing on shadowed default gems.
+  Pull request [#7949](https://github.com/rubygems/rubygems/pull/7949) by
+  deivid-rodriguez
+
+# 3.5.17 / 2024-08-01
+
+## Enhancements:
+
+* Explicitly encode `Gem::Dependency` to yaml. Pull request
+  [#7867](https://github.com/rubygems/rubygems/pull/7867) by segiddins
+* Installs bundler 2.5.17 as a default gem.
+
+## Bug fixes:
+
+* Fix `gem list` regression when a regular gem shadows a default one. Pull
+  request [#7892](https://github.com/rubygems/rubygems/pull/7892) by
+  deivid-rodriguez
+* Always leave default gem executables around. Pull request
+  [#7879](https://github.com/rubygems/rubygems/pull/7879) by
+  deivid-rodriguez
+* Fix line comment issue for hash when loading gemrc. Pull request
+  [#7857](https://github.com/rubygems/rubygems/pull/7857) by leetking
+
+
+------------------------------------------------------------------------------
+
+RubyGems installed the following executables:
+	/opt/homebrew/Cellar/ruby@3.2/3.2.5/bin/gem
+	/opt/homebrew/Cellar/ruby@3.2/3.2.5/bin/bundle
+	/opt/homebrew/Cellar/ruby@3.2/3.2.5/bin/bundler
+
+Ruby Interactive (ri) documentation was installed. ri is kind of like man 
+pages for Ruby libraries. You may access it like this:
+  ri Classname
+  ri Classname.class_method
+  ri Classname#instance_method
+If you do not wish to install this documentation in the future, use the
+--no-document flag, or set it as the default in your ~/.gemrc file. See
+'gem help env' for details.
+
+RubyGems system software updated
+devinryback@MacBookPro ~ % cd ~
+devinryback@MacBookPro ~ % mkdir _my_folder
+devinryback@MacBookPro ~ % cd my_folder
+cd: no such file or directory: my_folder
+devinryback@MacBookPro ~ % mv _my_folder my_folder
+devinryback@MacBookPro ~ % ls
+Applications		Library			TMM
+Desktop			Movies			git_basics
+Developer		Music			iCloud Drive (Archive)
+Documents		Pictures		my_folder
+Downloads		Public
+Dropbox			Standard Notes Backups
+devinryback@MacBookPro ~ % cd my_folder
+devinryback@MacBookPro my_folder % touch one.rb two.rb
+devinryback@MacBookPro my_folder % ls
+one.rb	two.rb
+devinryback@MacBookPro my_folder % open one.rb two.rb
+devinryback@MacBookPro my_folder % ruby one.rb
+This is file one.
+devinryback@MacBookPro my_folder % ruby two.rb
+This is file two.
+devinryback@MacBookPro my_folder % cd ..
+devinryback@MacBookPro ~ % ls
+Applications		Library			TMM
+Desktop			Movies			git_basics
+Developer		Music			iCloud Drive (Archive)
+Documents		Pictures		my_folder
+Downloads		Public
+Dropbox			Standard Notes Backups
+devinryback@MacBookPro ~ % rm -r my_folder
+devinryback@MacBookPro ~ % ls
+Applications		Dropbox			Public
+Desktop			Library			Standard Notes Backups
+Developer		Movies			TMM
+Documents		Music			git_basics
+Downloads		Pictures		iCloud Drive (Archive)
+devinryback@MacBookPro ~ % irb
+irb(main):001:0> a = 'ten'
+=> "ten"
+irb(main):002:0> "My favorite number is #{a}"
+=> "My favorite number is ten"
+irb(main):003:0> 1 + 1
+=> 2
+irb(main):004:0> 1 - 1
+=> 0
+irb(main):005:0> 4 * 4
+=> 16
+irb(main):006:0> 16 / 4
+=> 4
+irb(main):007:0> 16 % 4
+=> 0
+irb(main):008:0> 16 % 5
+=> 1
+irb(main):009:0> 15 / 4
+=> 3
+irb(main):010:0> 16.remain
+(irb):10:in `<main>': undefined method `remain' for 16:Integer (NoMethodError)                                                
+Did you mean?  remainder                            
+        from /opt/homebrew/Cellar/ruby@3.2/3.2.5/lib/ruby/gems/3.2.0/gems/irb-1.6.2/exe/irb:11:in `<top (required)>'          
+        from /opt/homebrew/opt/ruby@3.2/bin/irb:25:in `load'
+        from /opt/homebrew/opt/ruby@3.2/bin/irb:25:in `<main>'
+irb(main):011:0> 16.remainder(5)
+=> 1
+irb(main):012:0> 16.divmod(5)
+=> [3, 1]
+irb(main):013:0> 15.0 /4
+=> 3.75
+irb(main):014:0> 9.75 * 4.32
+=> 42.120000000000005
+irb(main):015:0> 4 == 4
+=> true
+irb(main):016:0> 4 == 5
+=> false
+irb(main):017:0> 'foo' == 'foo'
+=> true
+irb(main):018:0> 'foo' == 'bar'
+=> false
+irb(main):019:0> '4' == 4
+=> false
+irb(main):020:0> 'foo' + 'foo'
+=> "foofoo"
+irb(main):021:0> 'foo' + 'bar'
+=> "foobar"
+irb(main):022:0> 'This ' + 'is ' + 'fun!'
+=> "This is fun!"
+irb(main):023:0> '1' + '1'
+=> "11"
+irb(main):024:0> 'one' + 1
+(irb):24:in `+': no implicit conversion of Integer into String (TypeError)
+	from (irb):24:in `<main>'
+	from /opt/homebrew/Cellar/ruby@3.2/3.2.5/lib/ruby/gems/3.2.0/gems/irb-1.6.2/exe/irb:11:in `<top (required)>'
+	from /opt/homebrew/opt/ruby@3.2/bin/irb:25:in `load'
+	from /opt/homebrew/opt/ruby@3.2/bin/irb:25:in `<main>'
+irb(main):025:0> 'one' + 1.to_s
+=> "one1"
+irb(main):026:0> '12'.to_i
+=> 12
+irb(main):027:0> exit
+devinryback@MacBookPro ~ % cd ~
+devinryback@MacBookPro ~ % gh auth login
+zsh: command not found: gh
+devinryback@MacBookPro ~ % gh --version
+zsh: command not found: gh
+devinryback@MacBookPro ~ % git --version
+git version 2.47.0
+devinryback@MacBookPro ~ % git auth login
+git: 'auth' is not a git command. See 'git --help'.
+
+The most similar commands are
+	push
+	status
+devinryback@MacBookPro ~ % mkdir git_ruby_intro_book
+devinryback@MacBookPro ~ % cd git_ruby_intro_book
+devinryback@MacBookPro git_ruby_intro_book % git init
+Initialized empty Git repository in /Users/devinryback/git_ruby_intro_book/.git/
+devinryback@MacBookPro git_ruby_intro_book % ls
+devinryback@MacBookPro git_ruby_intro_book % ls -a
+.	..	.git
+devinryback@MacBookPro git_ruby_intro_book % echo '# READ ME #' > README.md
+devinryback@MacBookPro git_ruby_intro_book % echo '# LICENSE #' > LICENSE.md
+devinryback@MacBookPro git_ruby_intro_book % ls
+LICENSE.md	README.md
+devinryback@MacBookPro git_ruby_intro_book % cd ~/.gitconfig
+cd: not a directory: /Users/devinryback/.gitconfig
+devinryback@MacBookPro git_ruby_intro_book % git config --global user.name
+Devin Ryback
+devinryback@MacBookPro git_ruby_intro_book % git config --global user.email
+devinryback@protonmail.com
+devinryback@MacBookPro git_ruby_intro_book % cd ..
+devinryback@MacBookPro ~ % ls
+Applications		Library			TMM
+Desktop			Movies			git_basics
+Developer		Music			git_ruby_intro_book
+Documents		Pictures		iCloud Drive (Archive)
+Downloads		Public
+Dropbox			Standard Notes Backups
+devinryback@MacBookPro ~ % cd git_ruby_intro_book
+devinryback@MacBookPro git_ruby_intro_book % touch .gitignore
+devinryback@MacBookPro git_ruby_intro_book % ls -a
+.		.git		LICENSE.md
+..		.gitignore	README.md
+devinryback@MacBookPro git_ruby_intro_book % git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+	LICENSE.md
+	README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+devinryback@MacBookPro git_ruby_intro_book % git add .gitignore LICENSE.md README.md
+devinryback@MacBookPro git_ruby_intro_book % git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitignore
+	new file:   LICENSE.md
+	new file:   README.md
+
+devinryback@MacBookPro git_ruby_intro_book % touch 01_preparations.rb
+devinryback@MacBookPro git_ruby_intro_book % ls
+01_preparations.rb	LICENSE.md		README.md
+devinryback@MacBookPro git_ruby_intro_book % touch 02_the_basics.rb 03_variables.rb
+devinryback@MacBookPro git_ruby_intro_book % ls
+01_preparations.rb	03_variables.rb		README.md
+02_the_basics.rb	LICENSE.md
+devinryback@MacBookPro git_ruby_intro_book % touch 04_methods.rb 05_flow_control.rb 06_loops_iterators.rb 07_arrays.rb 08_hashes.rb 09_more_stuff.rb 10_exercises.rb
+devinryback@MacBookPro git_ruby_intro_book % ls
+01_preparations.rb	05_flow_control.rb	09_more_stuff.rb
+02_the_basics.rb	06_loops_iterators.rb	10_exercises.rb
+03_variables.rb		07_arrays.rb		LICENSE.md
+04_methods.rb		08_hashes.rb		README.md
+devinryback@MacBookPro git_ruby_intro_book % git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitignore
+	new file:   LICENSE.md
+	new file:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	01_preparations.rb
+	02_the_basics.rb
+	03_variables.rb
+	04_methods.rb
+	05_flow_control.rb
+	06_loops_iterators.rb
+	07_arrays.rb
+	08_hashes.rb
+	09_more_stuff.rb
+	10_exercises.rb
+
+devinryback@MacBookPro git_ruby_intro_book % git add --all
+devinryback@MacBookPro git_ruby_intro_book % git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitignore
+	new file:   01_preparations.rb
+	new file:   02_the_basics.rb
+	new file:   03_variables.rb
+	new file:   04_methods.rb
+	new file:   05_flow_control.rb
+	new file:   06_loops_iterators.rb
+	new file:   07_arrays.rb
+	new file:   08_hashes.rb
+	new file:   09_more_stuff.rb
+	new file:   10_exercises.rb
+	new file:   LICENSE.md
+	new file:   README.md
+
+devinryback@MacBookPro git_ruby_intro_book % git commit
+Aborting commit due to empty commit message.
+devinryback@MacBookPro git_ruby_intro_book %      
+devinryback@MacBookPro git_ruby_intro_book % for file in *.rb; do
+for> mv "$file" "${file%.rb}"
+for> done
+devinryback@MacBookPro git_ruby_intro_book % ls
+01_preparations		05_flow_control		09_more_stuff
+02_the_basics		06_loops_iterators	10_exercises
+03_variables		07_arrays		LICENSE.md
+04_methods		08_hashes		README.md
+devinryback@MacBookPro git_ruby_intro_book % rm 0[1-9]*
+devinryback@MacBookPro git_ruby_intro_book % ls
+10_exercises	LICENSE.md	README.md
+devinryback@MacBookPro git_ruby_intro_book % ls -a
+.		.git		10_exercises	README.md
+..		.gitignore	LICENSE.md
+devinryback@MacBookPro git_ruby_intro_book % rm 10*
+devinryback@MacBookPro git_ruby_intro_book % ls
+LICENSE.md	README.md
+devinryback@MacBookPro git_ruby_intro_book % git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitignore
+	new file:   01_preparations.rb
+	new file:   02_the_basics.rb
+	new file:   03_variables.rb
+	new file:   04_methods.rb
+	new file:   05_flow_control.rb
+	new file:   06_loops_iterators.rb
+	new file:   07_arrays.rb
+	new file:   08_hashes.rb
+	new file:   09_more_stuff.rb
+	new file:   10_exercises.rb
+	new file:   LICENSE.md
+	new file:   README.md
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    01_preparations.rb
+	deleted:    02_the_basics.rb
+	deleted:    03_variables.rb
+	deleted:    04_methods.rb
+	deleted:    05_flow_control.rb
+	deleted:    06_loops_iterators.rb
+	deleted:    07_arrays.rb
+	deleted:    08_hashes.rb
+	deleted:    09_more_stuff.rb
+	deleted:    10_exercises.rb
+
+devinryback@MacBookPro git_ruby_intro_book % git add --all
+devinryback@MacBookPro git_ruby_intro_book % git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitignore
+	new file:   LICENSE.md
+	new file:   README.md
+
+devinryback@MacBookPro git_ruby_intro_book % mkdir 01_prep 02_basics     
+devinryback@MacBookPro git_ruby_intro_book % ls
+01_prep		02_basics	LICENSE.md	README.md
+devinryback@MacBookPro git_ruby_intro_book % mkdir 03_variables 04_methods 05_flow_control 06_loops_iterators 07_arrays 08_hashes 09_more_stuff 10_exercises
+devinryback@MacBookPro git_ruby_intro_book % ls
+01_prep			05_flow_control		09_more_stuff
+02_basics		06_loops_iterators	10_exercises
+03_variables		07_arrays		LICENSE.md
+04_methods		08_hashes		README.md
+devinryback@MacBookPro git_ruby_intro_book % git add --all
+devinryback@MacBookPro git_ruby_intro_book % git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitignore
+	new file:   LICENSE.md
+	new file:   README.md
+
+devinryback@MacBookPro git_ruby_intro_book % touch 01_prep/exercise_01
+devinryback@MacBookPro git_ruby_intro_book % ls
+01_prep			05_flow_control		09_more_stuff
+02_basics		06_loops_iterators	10_exercises
+03_variables		07_arrays		LICENSE.md
+04_methods		08_hashes		README.md
+devinryback@MacBookPro git_ruby_intro_book % for dir in 0[1-9]*; do
+for> cp 01_prep/exercise_01.rb "$dir"
+for> done
+cp: 01_prep/exercise_01.rb: No such file or directory
+cp: 01_prep/exercise_01.rb: No such file or directory
+cp: 01_prep/exercise_01.rb: No such file or directory
+cp: 01_prep/exercise_01.rb: No such file or directory
+cp: 01_prep/exercise_01.rb: No such file or directory
+cp: 01_prep/exercise_01.rb: No such file or directory
+cp: 01_prep/exercise_01.rb: No such file or directory
+cp: 01_prep/exercise_01.rb: No such file or directory
+cp: 01_prep/exercise_01.rb: No such file or directory
+devinryback@MacBookPro git_ruby_intro_book % cd 01_prep
+devinryback@MacBookPro 01_prep % ls
+exercise_01
+devinryback@MacBookPro 01_prep % mv exercise_01 exercise_01.rb
+devinryback@MacBookPro 01_prep % ls
+exercise_01.rb
+devinryback@MacBookPro 01_prep % for dir in 0[1-9]*; do
+for> cp 01_prep/exercise_01.rb "$dir"
+zsh: parse error near `>'
+devinryback@MacBookPro 01_prep % cd ..
+devinryback@MacBookPro git_ruby_intro_book % ls
+01_prep			05_flow_control		09_more_stuff
+02_basics		06_loops_iterators	10_exercises
+03_variables		07_arrays		LICENSE.md
+04_methods		08_hashes		README.md
+devinryback@MacBookPro git_ruby_intro_book % for dir in 0[1-9]*; do
+for> cp 01_prep/exercise_01.rb "$dir"
+for> done
+zsh: parse error near `>'
+devinryback@MacBookPro git_ruby_intro_book % for dir in 0[1-9]*; do
+for> cp 01_prep/exercise_01.rb "$dir"
+for> done
+cp: 01_prep/exercise_01.rb and 01_prep/exercise_01.rb are identical (not copied).
+devinryback@MacBookPro git_ruby_intro_book % ls
+01_prep			05_flow_control		09_more_stuff
+02_basics		06_loops_iterators	10_exercises
+03_variables		07_arrays		LICENSE.md
+04_methods		08_hashes		README.md
+devinryback@MacBookPro git_ruby_intro_book % ls 02_basics
+exercise_01.rb
+devinryback@MacBookPro git_ruby_intro_book % ls 06_loops_iterators
+exercise_01.rb
+devinryback@MacBookPro git_ruby_intro_book % cp 01_prep/exercise_01.rb 10_exercises
+devinryback@MacBookPro git_ruby_intro_book % ls 10_exercises
+exercise_01.rb
+devinryback@MacBookPro git_ruby_intro_book % git add --all
+devinryback@MacBookPro git_ruby_intro_book % git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitignore
+	new file:   01_prep/exercise_01.rb
+	new file:   02_basics/exercise_01.rb
+	new file:   03_variables/exercise_01.rb
+	new file:   04_methods/exercise_01.rb
+	new file:   05_flow_control/exercise_01.rb
+	new file:   06_loops_iterators/exercise_01.rb
+	new file:   07_arrays/exercise_01.rb
+	new file:   08_hashes/exercise_01.rb
+	new file:   09_more_stuff/exercise_01.rb
+	new file:   10_exercises/exercise_01.rb
+	new file:   LICENSE.md
+	new file:   README.md
+
+devinryback@MacBookPro git_ruby_intro_book % git commit
+[main (root-commit) 12784fe] Add initial files
+ 13 files changed, 2 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 01_prep/exercise_01.rb
+ create mode 100644 02_basics/exercise_01.rb
+ create mode 100644 03_variables/exercise_01.rb
+ create mode 100644 04_methods/exercise_01.rb
+ create mode 100644 05_flow_control/exercise_01.rb
+ create mode 100644 06_loops_iterators/exercise_01.rb
+ create mode 100644 07_arrays/exercise_01.rb
+ create mode 100644 08_hashes/exercise_01.rb
+ create mode 100644 09_more_stuff/exercise_01.rb
+ create mode 100644 10_exercises/exercise_01.rb
+ create mode 100644 LICENSE.md
+ create mode 100644 README.md
+devinryback@MacBookPro git_ruby_intro_book % git status
+On branch main
+nothing to commit, working tree clean
+devinryback@MacBookPro git_ruby_intro_book % git log
+commit 12784fec65d8d0122e06e3458b40662fc0c9099f (HEAD -> main)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Sat Nov 2 15:28:06 2024 -0400
+
+    Add initial files
+devinryback@MacBookPro git_ruby_intro_book % brew install gh
+==> Auto-updating Homebrew...
+Adjust how often this is run with HOMEBREW_AUTO_UPDATE_SECS or disable with
+HOMEBREW_NO_AUTO_UPDATE. Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+==> Auto-updated Homebrew!
+Updated 2 taps (homebrew/core and homebrew/cask).
+==> New Formulae
+action-docs        icu4c@74           node@22            wasi-runtimes
+boring             icu4c@76           rip2               wasm-component-ld
+fcft               langgraph-cli      surfer             zizmor
+foot               markdown-oxide     vipsdisp
+==> New Casks
+claude                                github-copilot-for-xcode
+font-greybeard                        mailsteward
+font-zpix                             yellowdot
+
+You have 1 outdated formula installed.
+
+==> Downloading https://ghcr.io/v2/homebrew/core/gh/manifests/2.60.1
+################################################################### 100.0%
+==> Fetching gh
+==> Downloading https://ghcr.io/v2/homebrew/core/gh/blobs/sha256:bd7cf1368
+################################################################### 100.0%
+==> Pouring gh--2.60.1.arm64_sequoia.bottle.tar.gz
+==> Caveats
+zsh completions have been installed to:
+  /opt/homebrew/share/zsh/site-functions
+==> Summary
+🍺  /opt/homebrew/Cellar/gh/2.60.1: 207 files, 41.3MB
+==> Running `brew cleanup gh`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+devinryback@MacBookPro git_ruby_intro_book % gh --version
+gh version 2.60.1 (2024-10-25)
+https://github.com/cli/cli/releases/tag/v2.60.1
+devinryback@MacBookPro git_ruby_intro_book % git --version
+git version 2.47.0
+devinryback@MacBookPro git_ruby_intro_book % gh auth login
+? Where do you use GitHub? GitHub.com
+? What is your preferred protocol for Git operations on this host? HTTPS
+? Authenticate Git with your GitHub credentials? Yes
+? How would you like to authenticate GitHub CLI? Paste an authentication token
+Tip: you can generate a Personal Access Token here https://github.com/settings/tokens
+The minimum required scopes are 'repo', 'read:org', 'workflow'.
+? Paste your authentication token: ***************************************- gh config set -h github.com git_protocol https
+✓ Configured git protocol
+✓ Logged in as devinryback
+devinryback@MacBookPro git_ruby_intro_book % gh repo create git_ruby_intro_book --public
+✓ Created repository devinryback/git_ruby_intro_book on GitHub
+  https://github.com/devinryback/git_ruby_intro_book
+devinryback@MacBookPro git_ruby_intro_book % git status
+On branch main
+nothing to commit, working tree clean
+devinryback@MacBookPro git_ruby_intro_book % git log
+commit 12784fec65d8d0122e06e3458b40662fc0c9099f (HEAD -> main)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Sat Nov 2 15:28:06 2024 -0400
+
+    Add initial files
+devinryback@MacBookPro git_ruby_intro_book % git push -u origin main
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+devinryback@MacBookPro git_ruby_intro_book % git remote add origin https://github.com/devinryback/git_ruby_intro_book.git
+devinryback@MacBookPro git_ruby_intro_book % git push -u origin main
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 532 bytes | 532.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/devinryback/git_ruby_intro_book.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+devinryback@MacBookPro git_ruby_intro_book % pwd
+/Users/devinryback/git_ruby_intro_book
+devinryback@MacBookPro git_ruby_intro_book % cd ../
+devinryback@MacBookPro ~ % pwd
+/Users/devinryback
+devinryback@MacBookPro ~ % mkdir my_folder
+devinryback@MacBookPro ~ % cd my_folder
+devinryback@MacBookPro my_folder % touch one.rb two.rb
+devinryback@MacBookPro my_folder % ls
+one.rb	two.rb
+devinryback@MacBookPro my_folder % open one.rb two.rb
+devinryback@MacBookPro my_folder % ruby one.rb
+this is file one
+devinryback@MacBookPro my_folder % ruby two.rb
+this is file two
+devinryback@MacBookPro my_folder % cd 01_prep
+cd: no such file or directory: 01_prep
+devinryback@MacBookPro my_folder % cd ~
+devinryback@MacBookPro ~ % cd 01_prep
+cd: no such file or directory: 01_prep
+devinryback@MacBookPro ~ % cd git_ruby_intro_book
+devinryback@MacBookPro git_ruby_intro_book % cd 01_prep
+devinryback@MacBookPro 01_prep % ls
+exercise_01.rb	exercise_01.txt
+devinryback@MacBookPro 01_prep % open exercise_01.txt
+devinryback@MacBookPro 01_prep % open -a "Sublime Text" exercise_01.txt
+devinryback@MacBookPro 01_prep % git add .
+devinryback@MacBookPro 01_prep % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   exercise_01.txt
+
+devinryback@MacBookPro 01_prep % rm exercise_01.rb
+devinryback@MacBookPro 01_prep % ls
+exercise_01.txt
+devinryback@MacBookPro 01_prep % git add  
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Disable this message with "git config advice.addEmptyPathspec false"
+devinryback@MacBookPro 01_prep % git add .
+devinryback@MacBookPro 01_prep % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    exercise_01.rb
+	new file:   exercise_01.txt
+
+devinryback@MacBookPro 01_prep % pwd
+/Users/devinryback/git_ruby_intro_book/01_prep
+devinryback@MacBookPro 01_prep % cd ..
+devinryback@MacBookPro git_ruby_intro_book % ls
+01_prep			05_flow_control		09_more_stuff
+02_basics		06_loops_iterators	10_exercises
+03_variables		07_arrays		LICENSE.md
+04_methods		08_hashes		README.md
+devinryback@MacBookPro git_ruby_intro_book % cd ~
+devinryback@MacBookPro ~ % ls
+Applications		Library			TMM
+Desktop			Movies			git_basics
+Developer		Music			git_ruby_intro_book
+Documents		Pictures		iCloud Drive (Archive)
+Downloads		Public			my_folder
+Dropbox			Standard Notes Backups
+devinryback@MacBookPro ~ % cd my_folder
+devinryback@MacBookPro my_folder % cd ..
+devinryback@MacBookPro ~ % rm -r my_folder
+devinryback@MacBookPro ~ % ls
+Applications		Library			TMM
+Desktop			Movies			git_basics
+Developer		Music			git_ruby_intro_book
+Documents		Pictures		iCloud Drive (Archive)
+Downloads		Public
+Dropbox			Standard Notes Backups
+devinryback@MacBookPro ~ % irb
+irb(main):001:0' '12.to_i
+irb(main):002:0' '12'.to_i
+irb(main):003:0' 
+irb(main):004:0' '12'.to_i
+irb(main):005:0> '
+/opt/homebrew/Cellar/ruby@3.2/3.2.5/lib/ruby/3.2.0/irb/workspace.rb:119:in `eval': (irb):2: syntax error, unexpected integer literal, expecting end-of-input (SyntaxError)                                                    
+'12'.to_i                                                                 
+ ^~                                                                       
+                                                                          
+        from /opt/homebrew/Cellar/ruby@3.2/3.2.5/lib/ruby/gems/3.2.0/gems/irb-1.6.2/exe/irb:11:in `<top (required)>'                                
+        from /opt/homebrew/opt/ruby@3.2/bin/irb:25:in `load'              
+        from /opt/homebrew/opt/ruby@3.2/bin/irb:25:in `<main>'            
+irb(main):006:0> '12'.to_i
+=> 12
+irb(main):007:0' '12.to_i
+irb(main):008:0' '12'
+^C                                                    
+irb(main):007:0> '12'.to_i
+=> 12
+irb(main):008:0> '4'.to_i
+=> 4
+irb(main):009:0> '4 hi there'.to_i
+=> 4
+irb(main):010:0> 'hi there 4'.to_i
+=> 0
+irb(main):011:0> '4'.to_f
+=> 4.0
+irb(main):012:0> '4 hi there'.to_f
+=> 4.0
+irb(main):013:0> 'hi there 4'.to_f
+=> 0.0
+irb(main):014:0> [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb(main):015:0> [1, 2, 3, 4, 5][0]
+=> 1
+irb(main):016:0> x = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb(main):017:0> x[0]
+=> 1
+irb(main):018:0> x[2]
+=> 3
+irb(main):019:0> x[5]
+=> nil
+irb(main):020:0> {:dog => 'barks'}
+=> {:dog=>"barks"}
+irb(main):021:1* {:dog => 
+irb(main):022:2*   
+^C                                                                     
+irb(main):021:0> {:dog => 'barks', :cat => 'meows', :pig => 'oinks'}
+=> {:dog=>"barks", :cat=>"meows", :pig=>"oinks"}
+irb(main):022:0> {:dog => 'barks', :cat => 'meows', :pig => 'oinks'}[:cat]
+
+=> "meows"
+irb(main):023:0> puts 'stuff'
+stuff
+=> nil                                                                    
+irb(main):024:0> exit
+devinryback@MacBookPro ~ % cd git_ruby_intro_book/02_basics
+devinryback@MacBookPro 02_basics % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    ../01_prep/exercise_01.rb
+	new file:   ../01_prep/exercise_01.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	../01_prep/exercise_02.txt
+
+devinryback@MacBookPro 02_basics % git add ../01_prep/exercise_02.txt
+devinryback@MacBookPro 02_basics % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    ../01_prep/exercise_01.rb
+	new file:   ../01_prep/exercise_01.txt
+	new file:   ../01_prep/exercise_02.txt
+
+devinryback@MacBookPro 02_basics % git commit -m 'Add completed exercises'
+[main 184a681] Add completed exercises
+ 3 files changed, 12 insertions(+)
+ delete mode 100644 01_prep/exercise_01.rb
+ create mode 100644 01_prep/exercise_01.txt
+ create mode 100644 01_prep/exercise_02.txt
+devinryback@MacBookPro 02_basics % git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 531 bytes | 531.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/devinryback/git_ruby_intro_book.git
+   12784fe..184a681  main -> main
+devinryback@MacBookPro 02_basics % git log
+commit 184a6813193509b9de9f5773bae8aeb28b1b3280 (HEAD -> main, origin/main)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Sat Nov 2 17:03:57 2024 -0400
+
+    Add completed exercises
+
+commit 12784fec65d8d0122e06e3458b40662fc0c9099f
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Sat Nov 2 15:28:06 2024 -0400
+
+    Add initial files
+devinryback@MacBookPro 02_basics % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+devinryback@MacBookPro 02_basics % 

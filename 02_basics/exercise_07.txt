@@ -1,0 +1,5 @@
+Ruby was expecting a curly brace, not a parenthesis.
+
+LS Answer:
+
+There is a closing ) somewhere in the program without a corresponding opening (, and an opening { without a corresponding closing }. It may have happened when creating a hash.
