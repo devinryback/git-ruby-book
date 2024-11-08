@@ -1,0 +1,539 @@
+Last login: Tue Nov  5 09:34:48 on ttys000
+devinryback@STARSHIP ~ % cd 04_methods
+cd: no such file or directory: 04_methods
+devinryback@STARSHIP ~ % cd git_ruby_into_book/04_methods
+cd: no such file or directory: git_ruby_into_book/04_methods
+devinryback@STARSHIP ~ % ls
+Applications		Library			TMM
+Desktop			Movies			git_basics
+Developer		Music			git_ruby_intro_book
+Documents		Pictures		iCloud Drive (Archive)
+Downloads		Public
+Dropbox			Standard Notes Backups
+devinryback@STARSHIP ~ % cd git_ruby_intro_book
+devinryback@STARSHIP git_ruby_intro_book % ls
+01_prep			06_loops_iterators	LICENSE.md
+02_basics		07_arrays		README.md
+03_variables		08_hashes		Terminal Sessions
+04_methods		09_more_stuff
+05_flow_control		10_exercises
+devinryback@STARSHIP git_ruby_intro_book % cd 04_methods
+devinryback@STARSHIP 04_methods % ls
+exercise_01.rb
+devinryback@STARSHIP 04_methods % rm exercise_01.txt
+rm: exercise_01.txt: No such file or directory
+devinryback@STARSHIP 04_methods % rm exercise_01.rb
+devinryback@STARSHIP 04_methods % ls
+devinryback@STARSHIP 04_methods % touch say.rb
+devinryback@STARSHIP 04_methods % open say.rb
+devinryback@STARSHIP 04_methods % ruby say.rb
+hello
+hi
+how are you
+I'm fine
+hello.
+hi.
+how are you.
+I'm fine.
+devinryback@STARSHIP 04_methods % ls
+say.rb		say_02.rb	say_04.rb
+say_01.rb	say_03.rb
+devinryback@STARSHIP 04_methods % rm say.rb
+devinryback@STARSHIP 04_methods % ls
+say_01.rb	say_02.rb	say_03.rb	say_04.rb
+devinryback@STARSHIP 04_methods % ruby say_04.rb
+hello.
+hi.
+how are you.
+I'm fine.
+devinryback@STARSHIP 04_methods % cd ..
+devinryback@STARSHIP git_ruby_intro_book % open .gitignore
+devinryback@STARSHIP git_ruby_intro_book % sublime text .gitignore
+zsh: command not found: sublime
+devinryback@STARSHIP git_ruby_intro_book % mkdir ruby_notes
+devinryback@STARSHIP git_ruby_intro_book % ls
+01_prep			06_loops_iterators	LICENSE.md
+02_basics		07_arrays		README.md
+03_variables		08_hashes		Terminal Sessions
+04_methods		09_more_stuff		ruby_notes
+05_flow_control		10_exercises
+devinryback@STARSHIP git_ruby_intro_book % nano .gitignore
+devinryback@STARSHIP git_ruby_intro_book % open .gitignore
+devinryback@STARSHIP git_ruby_intro_book % git add .gitignore
+devinryback@STARSHIP git_ruby_intro_book % git commit -m "Update .gitignore"
+[main 664afe3] Update .gitignore
+ 1 file changed, 1 insertion(+)
+devinryback@STARSHIP git_ruby_intro_book % git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    04_methods/exercise_01.rb
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	04_methods/say_01.rb
+	04_methods/say_02.rb
+	04_methods/say_03.rb
+	04_methods/say_04.rb
+
+no changes added to commit (use "git add" and/or "git commit -a")
+devinryback@STARSHIP git_ruby_intro_book % git log
+commit 664afe3c4ae24fa66d58e0bb6e0e48ab94f1f33e (HEAD -> main)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Wed Nov 6 11:10:29 2024 -0500
+
+    Update .gitignore
+
+commit a724cc5138426e20d929da20892dad99fe5ebf62 (origin/main)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Tue Nov 5 18:37:58 2024 -0500
+
+    Quick change to today's Terminal session
+
+commit 620c374ebf3d003d31aba48f6bf37813d352574e
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Tue Nov 5 18:33:46 2024 -0500
+
+    Add completed exercises for 02 Basics and 03 Variables
+
+commit 184a6813193509b9de9f5773bae8aeb28b1b3280
+devinryback@STARSHIP git_ruby_intro_book % cd 04_methods
+devinryback@STARSHIP 04_methods % ls
+mutate.rb	say_02.rb	say_04.rb
+say_01.rb	say_03.rb
+devinryback@STARSHIP 04_methods % ruby mutate.rb
+"Before mutate method: [1, 2, 3]"
+"After mutate method: [1, 2]"
+devinryback@STARSHIP 04_methods % ruby mutate.rb
+"Before mutate method: [1, 2, 3]"
+"After mutate method: [1, 2]"
+"Before no_mutate method: [1, 2, 3]"
+"After no_mutate method: [1, 2, 3]"
+devinryback@STARSHIP 04_methods % ruby mutate.rb
+"Before mutate method: [1, 2, 3]"
+3
+"After mutate method: [1, 2]"
+"Before no_mutate method: [1, 2, 3]"
+"After no_mutate method: [1, 2, 3]"
+devinryback@STARSHIP 04_methods % ruby return.rb
+7
+devinryback@STARSHIP 04_methods % ruby return.rb
+7
+7
+devinryback@STARSHIP 04_methods % ruby return.rb
+7
+7
+7
+devinryback@STARSHIP 04_methods % ruby chaining_methods.rb
+this should print 8 times
+this should print 8 times
+this should print 8 times
+this should print 8 times
+this should print 8 times
+this should print 8 times
+this should print 8 times
+this should print 8 times
+devinryback@STARSHIP 04_methods % irb
+irb(main):001:1* def add_three(n)
+irb(main):002:1*   n + 3
+irb(main):003:0> end
+=> :add_three
+irb(main):004:0> 
+irb(main):005:0> add_three(5)      # returns 8
+=> 8
+irb(main):006:0> 
+irb(main):007:0> add_three(5).times { puts 'this should print 8 times' }
+
+this should print 8 times
+this should print 8 times
+this should print 8 times
+this should print 8 times
+this should print 8 times
+this should print 8 times
+this should print 8 times
+this should print 8 times
+=> 8
+irb(main):008:0> exit
+devinryback@STARSHIP 04_methods % ruby call_stack.rb
+first method
+second method
+devinryback@STARSHIP 04_methods % rm call_stack.rb
+devinryback@STARSHIP 04_methods % ls
+chaining_methods.rb		say_01.rb
+method_calls_arguments.rb	say_02.rb
+mutate.rb			say_03.rb
+return.rb			say_04.rb
+devinryback@STARSHIP 04_methods % ruby exercise_01.rb
+Hello, Alex
+devinryback@STARSHIP 04_methods % ruby exercise_01.rb
+Hello, Alex!
+devinryback@STARSHIP 04_methods % irb
+irb(main):001:0> x = 2
+=> 2
+irb(main):002:0> puts x = 2
+2
+=> nil                                           
+irb(main):003:0> p name = "Joe"
+"Joe"
+=> "Joe"                                         
+irb(main):004:0> four = "four"
+=> "four"
+irb(main):005:0> print something = "nothing"
+nothing=> nil
+irb(main):006:0> exit
+devinryback@STARSHIP 04_methods % ls
+chaining_methods.rb		return.rb
+exercise_01.rb			say_01.rb
+exercise_02.txt			say_02.rb
+exercise_03.rb			say_03.rb
+method_calls_arguments.rb	say_04.rb
+mutate.rb
+devinryback@STARSHIP 04_methods % ruby exercise_03.rb
+12
+devinryback@STARSHIP 04_methods % ruby exercise_03.rb
+12
+8
+devinryback@STARSHIP 04_methods % ruby exercise_04.rb
+devinryback@STARSHIP 04_methods % ruby exercise_04.rb
+Yippeee!!!!
+devinryback@STARSHIP 04_methods % git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   exercise_01.rb
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	chaining_methods.rb
+	exercise_02.txt
+	exercise_03.rb
+	exercise_04.rb
+	exercise_06.txt
+	method_calls_arguments.rb
+	mutate.rb
+	return.rb
+	say_01.rb
+	say_02.rb
+	say_03.rb
+	say_04.rb
+
+no changes added to commit (use "git add" and/or "git commit -a")
+devinryback@STARSHIP 04_methods % git commit -a
+Aborting commit due to empty commit message.
+devinryback@STARSHIP 04_methods % git commit -a
+[main 33232be] Add completed exercises in 04 Methods
+ 1 file changed, 14 insertions(+)
+devinryback@STARSHIP 04_methods % git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	chaining_methods.rb
+	exercise_02.txt
+	exercise_03.rb
+	exercise_04.rb
+	exercise_06.txt
+	method_calls_arguments.rb
+	mutate.rb
+	return.rb
+	say_01.rb
+	say_02.rb
+	say_03.rb
+	say_04.rb
+
+nothing added to commit but untracked files present (use "git add" to track)
+devinryback@STARSHIP 04_methods % git log
+commit 33232be02c45ddcf419ac010f7fc2dbd1fa8b0d0 (HEAD -> main)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Thu Nov 7 11:36:06 2024 -0500
+
+    Add completed exercises in 04 Methods
+
+commit 664afe3c4ae24fa66d58e0bb6e0e48ab94f1f33e
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Wed Nov 6 11:10:29 2024 -0500
+
+    Update .gitignore
+
+commit a724cc5138426e20d929da20892dad99fe5ebf62 (origin/main)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Tue Nov 5 18:37:58 2024 -0500
+
+    Quick change to today's Terminal session
+
+commit 620c374ebf3d003d31aba48f6bf37813d352574e
+devinryback@STARSHIP 04_methods % git git add .
+git: 'git' is not a git command. See 'git --help'.
+
+The most similar command is
+	init
+devinryback@STARSHIP 04_methods % git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Disable this message with "git config advice.addEmptyPathspec false"
+devinryback@STARSHIP 04_methods % git add .
+devinryback@STARSHIP 04_methods % git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   chaining_methods.rb
+	new file:   exercise_02.txt
+	new file:   exercise_03.rb
+	new file:   exercise_04.rb
+	new file:   exercise_06.txt
+	new file:   method_calls_arguments.rb
+	new file:   mutate.rb
+	new file:   return.rb
+	new file:   say_01.rb
+	new file:   say_02.rb
+	new file:   say_03.rb
+	new file:   say_04.rb
+
+devinryback@STARSHIP 04_methods % git commit -m "Add completed exercises for 04 Methods"
+[main 86e41ab] Add completed exercises for 04 Methods
+ 12 files changed, 250 insertions(+)
+ create mode 100644 04_methods/chaining_methods.rb
+ create mode 100644 04_methods/exercise_02.txt
+ create mode 100644 04_methods/exercise_03.rb
+ create mode 100644 04_methods/exercise_04.rb
+ create mode 100644 04_methods/exercise_06.txt
+ create mode 100644 04_methods/method_calls_arguments.rb
+ create mode 100644 04_methods/mutate.rb
+ create mode 100644 04_methods/return.rb
+ create mode 100644 04_methods/say_01.rb
+ create mode 100644 04_methods/say_02.rb
+ create mode 100644 04_methods/say_03.rb
+ create mode 100644 04_methods/say_04.rb
+devinryback@STARSHIP 04_methods % git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+devinryback@STARSHIP 04_methods % git push
+Enumerating objects: 26, done.
+Counting objects: 100% (25/25), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (20/20), done.
+Writing objects: 100% (22/22), 3.68 KiB | 3.68 MiB/s, done.
+Total 22 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+To https://github.com/devinryback/git_ruby_intro_book.git
+   a724cc5..86e41ab  main -> main
+devinryback@STARSHIP 04_methods % git log
+commit 86e41ab3345da974db9d3b44b6bd6c1bc8dac54b (HEAD -> main, origin/main)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Thu Nov 7 11:40:24 2024 -0500
+
+    Add completed exercises for 04 Methods
+
+commit 33232be02c45ddcf419ac010f7fc2dbd1fa8b0d0
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Thu Nov 7 11:36:06 2024 -0500
+
+    Add completed exercises in 04 Methods
+
+commit 664afe3c4ae24fa66d58e0bb6e0e48ab94f1f33e
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Wed Nov 6 11:10:29 2024 -0500
+
+    Update .gitignore
+
+devinryback@STARSHIP 04_methods % git log
+commit 86e41ab3345da974db9d3b44b6bd6c1bc8dac54b (HEAD -> main, origin/main)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Thu Nov 7 11:40:24 2024 -0500
+
+    Add completed exercises for 04 Methods
+
+commit 33232be02c45ddcf419ac010f7fc2dbd1fa8b0d0
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Thu Nov 7 11:36:06 2024 -0500
+
+    Add completed exercises in 04 Methods
+
+commit 664afe3c4ae24fa66d58e0bb6e0e48ab94f1f33e
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Wed Nov 6 11:10:29 2024 -0500
+
+    Update .gitignore
+
+commit a724cc5138426e20d929da20892dad99fe5ebf62
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Tue Nov 5 18:37:58 2024 -0500
+
+commit 86e41ab3345da974db9d3b44b6bd6c1bc8dac54b (HEAD -> main, origin/ma
+in)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Thu Nov 7 11:40:24 2024 -0500
+
+    Add completed exercises for 04 Methods
+
+commit 33232be02c45ddcf419ac010f7fc2dbd1fa8b0d0
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Thu Nov 7 11:36:06 2024 -0500
+
+    Add completed exercises in 04 Methods
+
+commit 664afe3c4ae24fa66d58e0bb6e0e48ab94f1f33e
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Wed Nov 6 11:10:29 2024 -0500
+
+    Update .gitignore
+
+commit 86e41ab3345da974db9d3b44b6bd6c1bc8dac54b (HEAD -> main, origin/ma
+in)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Thu Nov 7 11:40:24 2024 -0500
+
+    Add completed exercises for 04 Methods
+
+commit 33232be02c45ddcf419ac010f7fc2dbd1fa8b0d0
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Thu Nov 7 11:36:06 2024 -0500
+
+    Add completed exercises in 04 Methods
+
+commit 664afe3c4ae24fa66d58e0bb6e0e48ab94f1f33e
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Wed Nov 6 11:10:29 2024 -0500
+
+    Update .gitignore
+
+    Add completed exercises in 04 Methods
+
+commit 664afe3c4ae24fa66d58e0bb6e0e48ab94f1f33e
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Wed Nov 6 11:10:29 2024 -0500
+
+    Update .gitignore
+
+commit a724cc5138426e20d929da20892dad99fe5ebf62
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Tue Nov 5 18:37:58 2024 -0500
+
+commit 86e41ab3345da974db9d3b44b6bd6c1bc8dac54b (HEAD -> main, origin/ma
+in)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Thu Nov 7 11:40:24 2024 -0500
+
+    Add completed exercises for 04 Methods
+
+commit 33232be02c45ddcf419ac010f7fc2dbd1fa8b0d0
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Thu Nov 7 11:36:06 2024 -0500
+
+    Add completed exercises in 04 Methods
+
+commit 664afe3c4ae24fa66d58e0bb6e0e48ab94f1f33e
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Wed Nov 6 11:10:29 2024 -0500
+
+    Update .gitignore
+
+devinryback@STARSHIP 04_methods % cd ..
+devinryback@STARSHIP git_ruby_intro_book % cd 05_flow_control
+devinryback@STARSHIP 05_flow_control % touch conditional.rb
+devinryback@STARSHIP 05_flow_control % open conditional.rb
+devinryback@STARSHIP 05_flow_control % ruby conditional.rb
+Put in a number
+3
+a is 3
+devinryback@STARSHIP 05_flow_control % ruby conditional.rb
+Put in a number
+4
+a is 4
+devinryback@STARSHIP 05_flow_control % ruby conditional.rb
+Put in a number
+7
+a is neither 3, nor 4
+devinryback@STARSHIP 05_flow_control % irb
+irb(main):001:0> 3 == 3 ? "yes" : "no"
+=> "yes"
+irb(main):002:0> exit
+devinryback@STARSHIP 05_flow_control % irb
+irb(main):001:0> (32 * 4) >= 129
+=> false
+irb(main):002:0> false != !true
+=> false
+irb(main):003:0> true == 4
+=> false
+irb(main):004:0> false == (847 == '847')
+=> true
+irb(main):005:0> (!true || (!(100 / 5) == 20) || ((328 / 4) == 82)) || f
+alse
+=> true
+irb(main):006:0> exit
+devinryback@STARSHIP 05_flow_control % ruby exercise_02.rb
+devinryback@STARSHIP 05_flow_control % ruby exercise_02.rb
+exercise_02.rb:1:in `cap_10': wrong number of arguments (given 0, expected 1) (ArgumentError)
+	from exercise_02.rb:6:in `<main>'
+devinryback@STARSHIP 05_flow_control % ruby exercise_02.rb
+exercise_02.rb:5:in `<main>': undefined local variable or method `hello' for main:Object (NameError)
+
+cap_10(hello)
+       ^^^^^
+devinryback@STARSHIP 05_flow_control % ruby exercise_02.rb
+devinryback@STARSHIP 05_flow_control % ruby exercise_02.rb
+5
+devinryback@STARSHIP 05_flow_control % ruby exercise_02.rb
+hello
+devinryback@STARSHIP 05_flow_control % ruby exercise_02.rb
+hello
+exercise_02.rb:4:in `cap_10': undefined method `up_case' for "hello world":String (NoMethodError)
+
+    puts words.up_case
+              ^^^^^^^^
+Did you mean?  upcase
+               upcase!
+	from exercise_02.rb:11:in `<main>'
+devinryback@STARSHIP 05_flow_control % ruby exercise_02.rb
+hello
+HELLO WORLD
+devinryback@STARSHIP 05_flow_control % # caps_method.rb
+
+def caps(string)
+  if string.length > 10
+    string.upcase
+  else
+    string
+  end
+end
+
+puts caps("Joe Smith")
+puts caps("Joe Robertson")
+zsh: parse error near `else'
+devinryback@STARSHIP 05_flow_control % ruby exercise_02.rb
+hello
+HELLO WORLD
+Joes Smith
+JOE ROBERTSON
+devinryback@STARSHIP 05_flow_control % git add .
+devinryback@STARSHIP 05_flow_control % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   case_no_argument.rb
+	new file:   case_statement.rb
+	new file:   conditional.rb
+	new file:   exercise_01.txt
+	new file:   exercise_02.rb
+	new file:   if_statement.rb
+	new file:   true_false.rb
+
+devinryback@STARSHIP 05_flow_control % 
