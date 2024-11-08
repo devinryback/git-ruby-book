@@ -1,0 +1,15 @@
+# exercise_01.txt
+
+# What does the each method return when finished executing?
+
+x = [1, 2, 3, 4, 5]
+x.each do |a|
+  a + 1
+end
+
+# [2, 3, 4, 5, 6]
+# Incorrect
+
+# [1, 2, 3, 4, 5]
+
+# .each always returns original array.
