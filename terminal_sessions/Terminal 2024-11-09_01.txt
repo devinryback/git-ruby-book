@@ -1,0 +1,723 @@
+Last login: Fri Nov  8 09:20:22 on ttys000
+devinryback@STARSHIP ~ % cd git_ruby_intro_book
+devinryback@STARSHIP git_ruby_intro_book % ls
+01_prep			06_loops_iterators	LICENSE.md
+02_basics		07_arrays		README.md
+03_variables		08_hashes		Terminal Sessions
+04_methods		09_more_stuff		ruby_notes
+05_flow_control		10_exercises
+devinryback@STARSHIP git_ruby_intro_book % cd 07_arrays
+devinryback@STARSHIP 07_arrays % ls
+exercise_01.rb
+devinryback@STARSHIP 07_arrays % cd ..
+devinryback@STARSHIP git_ruby_intro_book % cd 06_loops_iterators
+devinryback@STARSHIP 06_loops_iterators % ls
+conditional_loop.rb		exercise_02.rb
+conditional_loop_with_break.rb	exercise_03.rb
+conditional_loop_with_next.rb	fibonacci.rb
+conditional_while_loop.rb	loop_example.rb
+countdown.rb			next_loop.rb
+countdown2.rb			perform_again.rb
+countdown3.rb			practice_each.rb
+countdown4.rb			practice_each2.rb
+exercise_01.rb			recursion_practice.rb
+exercise_01.txt			useful_loop.rb
+devinryback@STARSHIP 06_loops_iterators % open exercise_01.rb
+devinryback@STARSHIP 06_loops_iterators % rm exercise_01.rb
+devinryback@STARSHIP 06_loops_iterators % ls
+conditional_loop.rb		exercise_03.rb
+conditional_loop_with_break.rb	fibonacci.rb
+conditional_loop_with_next.rb	loop_example.rb
+conditional_while_loop.rb	next_loop.rb
+countdown.rb			perform_again.rb
+countdown2.rb			practice_each.rb
+countdown3.rb			practice_each2.rb
+countdown4.rb			recursion_practice.rb
+exercise_01.txt			useful_loop.rb
+exercise_02.rb
+devinryback@STARSHIP 06_loops_iterators % irb
+irb(main):001:0> number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+irb(main):002:0> numbers.select { |number| number > 4 }
+(irb):2:in `<main>': undefined local variable or method `numbers' for main:Object (NameError)                                                   
+Did you mean?  number                                                   
+        from /opt/homebrew/Cellar/ruby@3.2/3.2.5/lib/ruby/gems/3.2.0/gems/irb-1.6.2/exe/irb:11:in `<top (required)>'                            
+        from /opt/homebrew/opt/ruby@3.2/bin/irb:25:in `load'            
+        from /opt/homebrew/opt/ruby@3.2/bin/irb:25:in `<main>'          
+irb(main):003:0> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+irb(main):004:0> numbers.select { |number| number > 4 }
+=> [5, 6, 7, 8, 9, 10]
+irb(main):005:0> 
+irb(main):006:0> 
+irb(main):007:0> exit
+devinryback@STARSHIP 06_loops_iterators % ruby mutate_caller_argument.rb
+ruby: No such file or directory -- mutate_caller_argument.rb (LoadError)
+devinryback@STARSHIP 06_loops_iterators % cd ..
+devinryback@STARSHIP git_ruby_intro_book % cd 07_arrays
+devinryback@STARSHIP 07_arrays % ruby mutate_caller_argument.rb
+1
+2
+3
+4
+5
+devinryback@STARSHIP 07_arrays % irb
+irb(main):001:0> teams = [['Joe', 'Steve'], ['Frank', 'Molly'], ['Dan', 
+'Sara']]
+=> [["Joe", "Steve"], ["Frank", "Molly"], ["Dan", "Sara"]]
+irb(main):002:0> teams[1]
+=> ["Frank", "Molly"]
+irb(main):003:0> meals = [breakfast: 'eggs', lunch: 'sandwich', dinner: 
+'salad']
+=> [{:breakfast=>"eggs", :lunch=>"sandwich", :dinner=>"salad"}]
+irb(main):004:0> meals[0]
+=> {:breakfast=>"eggs", :lunch=>"sandwich", :dinner=>"salad"}
+irb(main):005:0> meals[1]
+=> nil
+irb(main):006:0> a = [1, 2, 3]
+=> [1, 2, 3]
+irb(main):007:0> b = [2, 3, 4]
+=> [2, 3, 4]
+irb(main):008:0> a == b
+=> false
+irb(main):009:0> b.pop
+=> 4
+irb(main):010:0> b.unshift(1)
+=> [1, 2, 3]
+irb(main):011:0> a == b
+=> true
+irb(main):012:0> a = [1, 2, [3, 4, 5], [6, 7]]
+=> [1, 2, [3, 4, 5], [6, 7]]
+irb(main):013:0> a.flatten
+=> [1, 2, 3, 4, 5, 6, 7]
+irb(main):014:0> a
+=> [1, 2, [3, 4, 5], [6, 7]]
+irb(main):015:0> a = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb(main):016:0> a.each_index { |i| puts "This is index #{i}" }
+This is index 0
+This is index 1                                                         
+This is index 2                                                         
+This is index 3                                                         
+This is index 4                                                         
+=> [1, 2, 3, 4, 5]                                                      
+irb(main):017:0> a.each_with_index { |val, idx| puts "#{idx+1}. #{val}" 
+}
+1. 1
+2. 2                                                                    
+3. 3                                                                    
+4. 4                                                                    
+5. 5                                                                    
+=> [1, 2, 3, 4, 5]                                                      
+irb(main):018:0> a = [5, 3, 8, 2, 4, 1]
+=> [5, 3, 8, 2, 4, 1]
+irb(main):019:0> a.sort
+=> [1, 2, 3, 4, 5, 8]
+irb(main):020:0> a
+=> [5, 3, 8, 2, 4, 1]
+irb(main):021:0> [1, 2, 3].product([4, 5])
+=> [[1, 4], [1, 5], [2, 4], [2, 5], [3, 4], [3, 5]]
+irb(main):022:0> a = [1, 2, 3]
+=> [1, 2, 3]
+irb(main):023:0> a.each { |e| puts e }
+1
+2                                                             
+3                                                             
+=> [1, 2, 3]                                                  
+irb(main):024:0> a.each { |e| e = 2 }
+=> [1, 2, 3]
+irb(main):025:0> a.each { |e| e + 2 }
+=> [1, 2, 3]
+irb(main):026:0> a.each { |e| puts e + 2 }
+3
+4                                                             
+5                                                             
+=> [1, 2, 3]                                                  
+irb(main):027:1* a. each do |e|
+irb(main):028:1*   puts e + 2
+irb(main):029:0> end
+3
+4                                                             
+5                                                             
+=> [1, 2, 3]                                                  
+irb(main):030:0> a.each
+=> #<Enumerator: ...>
+irb(main):031:0> a.map { |x| x**2 }
+=> [1, 4, 9]
+irb(main):032:0> a
+=> [1, 2, 3]
+irb(main):033:0> a.map { |x| puts x**2 }
+1
+4                                                            
+9                                                            
+=> [nil, nil, nil]                                           
+irb(main):034:0> a.map
+=> #<Enumerator: ...>
+irb(main):035:0> arr = ["b", "a"]
+=> ["b", "a"]
+irb(main):036:0> arr = arr.product(Array(1..3))
+=> [["b", 1], ["b", 2], ["b", 3], ["a", 1], ["a", 2], ["a", 3]]
+irb(main):037:0> arr.first.delete(arr.first.last)
+=> 1
+irb(main):038:0> arr
+=> [["b"], ["b", 2], ["b", 3], ["a", 1], ["a", 2], ["a", 3]]
+irb(main):039:0> arr = ["b", "a"]
+=> ["b", "a"]
+irb(main):040:0> arr = arr.product([Array(1..3)])
+=> [["b", [1, 2, 3]], ["a", [1, 2, 3]]]
+irb(main):041:0> arr.first.delete(arr.first.last)
+=> [1, 2, 3]
+irb(main):042:0> arr
+=> [["b"], ["a", [1, 2, 3]]]
+irb(main):043:0> arr = [["test", "hello", "world"],["eample","mem"]]
+=> [["test", "hello", "world"], ["eample", "mem"]]
+irb(main):044:0> 
+irb(main):045:0> arr[1,0]
+=> []
+irb(main):046:0> arr
+=> [["test", "hello", "world"], ["eample", "mem"]]
+irb(main):047:0> arr(1,0)
+(irb):47:in `<main>': undefined method `arr' for main:Object (NoMethodError)                      
+Did you mean?  Array      
+        from /opt/homebrew/Cellar/ruby@3.2/3.2.5/lib/ruby/gems/3.2.0/gems/irb-1.6.2/exe/irb:11:in `<top (required)>'
+        from /opt/homebrew/opt/ruby@3.2/bin/irb:25:in `load'
+        from /opt/homebrew/opt/ruby@3.2/bin/irb:25:in `<main>'
+irb(main):048:0> arr[1,0]
+=> []
+irb(main):049:0> arr[0]
+=> ["test", "hello", "world"]
+irb(main):050:0> arr[1]
+=> ["eample", "mem"]
+irb(main):051:0> arr[1][0]
+=> "eample"
+irb(main):052:0> arr = [15, 7, 18, 5, 12, 8, 5, 1]
+=> [15, 7, 18, 5, 12, 8, 5, 1]
+irb(main):053:0> arr.index(5)
+=> 3
+irb(main):054:0> arr.index[5]
+(irb):54:in `<main>': undefined method `[]' for #<Enumerator: [15, 7, 18, 5, 12, 8, 5, 1]:index> (NoMethodError)
+	from /opt/homebrew/Cellar/ruby@3.2/3.2.5/lib/ruby/gems/3.2.0/gems/irb-1.6.2/exe/irb:11:in `<top (required)>'
+	from /opt/homebrew/opt/ruby@3.2/bin/irb:25:in `load'
+	from /opt/homebrew/opt/ruby@3.2/bin/irb:25:in `<main>'
+irb(main):055:0> arr[5]
+=> 8
+irb(main):056:0> numbers = [1, 3, 2, 4, 3, 5, 4, 6, 5, 7]
+=> [1, 3, 2, 4, 3, 5, 4, 6, 5, 7]
+irb(main):057:0> 
+irb(main):058:0> number.each_with_index { |i,v| puts "#{i}. #{v}"}
+(irb):58:in `<main>': undefined local variable or method `number' for main:Object (NameError)
+Did you mean?  numbers
+	from /opt/homebrew/Cellar/ruby@3.2/3.2.5/lib/ruby/gems/3.2.0/gems/irb-1.6.2/exe/irb:11:in `<top (required)>'
+	from /opt/homebrew/opt/ruby@3.2/bin/irb:25:in `load'
+	from /opt/homebrew/opt/ruby@3.2/bin/irb:25:in `<main>'
+irb(main):059:0> numbers = [1, 3, 2, 4, 3, 5, 4, 6, 5, 7]
+=> [1, 3, 2, 4, 3, 5, 4, 6, 5, 7]
+irb(main):060:0> 
+irb(main):061:0> numbers.each_with_index { |i,v| puts "#{i}. #{v}"}
+1. 0
+3. 1
+2. 2
+4. 3
+3. 4
+5. 5
+4. 6
+6. 7
+5. 8
+7. 9
+=> [1, 3, 2, 4, 3, 5, 4, 6, 5, 7]
+irb(main):062:0> numbers = [1, 3, 2, 4, 3, 5, 4, 6, 5, 7]
+=> [1, 3, 2, 4, 3, 5, 4, 6, 5, 7]
+irb(main):063:0> 
+irb(main):064:0> numbers.each_with_index { |v,i| puts "#{v}. #{i}"}
+1. 0
+3. 1
+2. 2
+4. 3
+3. 4
+5. 5
+4. 6
+6. 7
+5. 8
+7. 9
+=> [1, 3, 2, 4, 3, 5, 4, 6, 5, 7]
+irb(main):065:0> numbers = [1, 3, 2, 4, 3, 5, 4, 6, 5, 7]
+=> [1, 3, 2, 4, 3, 5, 4, 6, 5, 7]
+irb(main):066:0> 
+irb(main):067:0> numbers.each_with_index { |i,v| puts "#{v}. #{i}"}
+0. 1
+1. 3
+2. 2
+3. 4
+4. 3
+5. 5
+6. 4
+7. 6
+8. 5
+9. 7
+=> [1, 3, 2, 4, 3, 5, 4, 6, 5, 7]
+irb(main):068:1* top_five_games = ["mario brothers",
+irb(main):069:1* "excite bike",
+irb(main):070:1* "ring kind",
+irb(main):071:1* "castlevania",
+irb(main):072:0> "double dragon"]
+=> 
+["mario brothers",
+...
+irb(main):073:0> 
+irb(main):074:1* top_five_games.each_with_index do | game, index |
+irb(main):075:1*   puts "#{index = 1}. #{game}"
+irb(main):076:0> end
+1. mario brothers
+1. excite bike
+1. ring kind
+1. castlevania
+1. double dragon
+=> 
+["mario brothers",
+ "excite bike",
+ "ring kind",
+ "castlevania",
+ "double dragon"]
+irb(main):077:0> exit
+devinryback@STARSHIP 07_arrays % irb
+irb(main):001:0> arr1 = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb(main):002:0> 
+irb(main):003:0> arr2 = arr1.map { |num| num +2 }
+=> [3, 4, 5, 6, 7]
+irb(main):004:0> 
+irb(main):005:0> p arr1
+irb(main):006:0> p arr2
+[1, 2, 3, 4, 5]
+[3, 4, 5, 6, 7]
+=> [3, 4, 5, 6, 7]
+irb(main):007:0> arr = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb(main):008:0> new_arr = []
+=> []
+irb(main):009:0> 
+irb(main):010:1* arr.each do |n|
+irb(main):011:1*   new_arr << n + 2
+irb(main):012:0> end
+=> [1, 2, 3, 4, 5]
+irb(main):013:0> 
+irb(main):014:0> p arr
+irb(main):015:0> p new_arr
+[1, 2, 3, 4, 5]
+[3, 4, 5, 6, 7]
+=> [3, 4, 5, 6, 7]
+irb(main):016:0> exit
+devinryback@STARSHIP 07_arrays % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    ../06_loops_iterators/exercise_01.rb
+	modified:   exercise_01.rb
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	array_learning.rb
+	exercise_02.rb
+	exercise_03.rb
+	exercise_04.rb
+	exercise_06.rb
+	exercise_07.rb
+	exercise_08.rb
+	mutate_caller_argument.rb
+	../Terminal Sessions/Terminal 2024-11-08_01.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+devinryback@STARSHIP 07_arrays % git add  . 
+devinryback@STARSHIP 07_arrays % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   array_learning.rb
+	modified:   exercise_01.rb
+	new file:   exercise_02.rb
+	new file:   exercise_03.rb
+	new file:   exercise_04.rb
+	new file:   exercise_06.rb
+	new file:   exercise_07.rb
+	new file:   exercise_08.rb
+	new file:   mutate_caller_argument.rb
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    ../06_loops_iterators/exercise_01.rb
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	../Terminal Sessions/Terminal 2024-11-08_01.txt
+
+devinryback@STARSHIP 07_arrays % git add ..
+f%                                                                      devinryback@STARSHIP 07_arrays % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    ../06_loops_iterators/exercise_01.rb
+	new file:   array_learning.rb
+	modified:   exercise_01.rb
+	new file:   exercise_02.rb
+	new file:   exercise_03.rb
+	new file:   exercise_04.rb
+	new file:   exercise_06.rb
+	new file:   exercise_07.rb
+	new file:   exercise_08.rb
+	new file:   mutate_caller_argument.rb
+	new file:   ../Terminal Sessions/Terminal 2024-11-08_01.txt
+
+devinryback@STARSHIP 07_arrays % git commit -m "Add completed notes + exercises for 07 Arrays"  
+[main 90804c1] Add completed notes + exercises for 07 Arrays
+ 11 files changed, 3855784 insertions(+)
+ delete mode 100644 06_loops_iterators/exercise_01.rb
+ create mode 100644 07_arrays/array_learning.rb
+ create mode 100644 07_arrays/exercise_02.rb
+ create mode 100644 07_arrays/exercise_03.rb
+ create mode 100644 07_arrays/exercise_04.rb
+ create mode 100644 07_arrays/exercise_06.rb
+ create mode 100644 07_arrays/exercise_07.rb
+ create mode 100644 07_arrays/exercise_08.rb
+ create mode 100644 07_arrays/mutate_caller_argument.rb
+ create mode 100644 Terminal Sessions/Terminal 2024-11-08_01.txt
+devinryback@STARSHIP 07_arrays % git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+devinryback@STARSHIP 07_arrays % git push
+Enumerating objects: 20, done.
+Counting objects: 100% (20/20), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (15/15), 391.33 KiB | 1.10 MiB/s, done.
+Total 15 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+git log
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+remote: error: Trace: b5c61c1ff63ef0c0596b82a2a1a5dd5448abe1c956f96fbba145bf64ce932824
+remote: error: See https://gh.io/lfs for more information.
+remote: error: File Terminal Sessions/Terminal 2024-11-08_01.txt is 134.49 MB; this exceeds GitHub's file size limit of 100.00 MB
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+To https://github.com/devinryback/git_ruby_intro_book.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://github.com/devinryback/git_ruby_intro_book.git'
+devinryback@STARSHIP 07_arrays % git log
+commit 90804c103f411c87ce167db9694eb04170e826f8 (HEAD -> main)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Sat Nov 9 12:53:25 2024 -0500
+
+    Add completed notes + exercises for 07 Arrays
+
+commit e4b3e0c3b20c8cba9b6b2873c285e7d6e521380d (origin/main)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Fri Nov 8 17:03:20 2024 -0500
+
+    Add completed exexercises for 06 Loop & Iterators
+
+commit 3b8e17215601c5b13e401c313f50f0c79d824c08
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Fri Nov 8 13:05:15 2024 -0500
+
+    Add completed exercises for 05 Flow Control
+
+commit 86e41ab3345da974db9d3b44b6bd6c1bc8dac54b
+devinryback@STARSHIP 07_arrays % git commit -m "Add completed notes + exercises for 07 Arrays  
+devinryback@STARSHIP 07_arrays % cd ..
+devinryback@STARSHIP git_ruby_intro_book % ls
+01_prep			06_loops_iterators	LICENSE.md
+02_basics		07_arrays		README.md
+03_variables		08_hashes		Terminal Sessions
+04_methods		09_more_stuff		ruby_notes
+05_flow_control		10_exercises
+devinryback@STARSHIP git_ruby_intro_book % cd Terminal Sessions
+cd: string not in pwd: Terminal
+devinryback@STARSHIP git_ruby_intro_book % pwd
+/Users/devinryback/git_ruby_intro_book
+devinryback@STARSHIP git_ruby_intro_book % cd Terminal_Sessions
+cd: no such file or directory: Terminal_Sessions
+devinryback@STARSHIP git_ruby_intro_book % ls
+01_prep			06_loops_iterators	LICENSE.md
+02_basics		07_arrays		README.md
+03_variables		08_hashes		ruby_notes
+04_methods		09_more_stuff		terminal_sessions
+05_flow_control		10_exercises
+devinryback@STARSHIP git_ruby_intro_book % git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    Terminal Sessions/Terminal 2024-11-02_01.txt
+	deleted:    Terminal Sessions/Terminal 2024-11-04_01.txt
+	deleted:    Terminal Sessions/Terminal 2024-11-05_01.txt
+	deleted:    Terminal Sessions/Terminal 2024-11-07_01.txt
+	deleted:    Terminal Sessions/Terminal 2024-11-08_01.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	terminal_sessions/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+devinryback@STARSHIP git_ruby_intro_book % git add .
+devinryback@STARSHIP git_ruby_intro_book % git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    Terminal Sessions/Terminal 2024-11-08_01.txt
+	new file:   terminal_sessions/.DS_Store
+	renamed:    Terminal Sessions/Terminal 2024-11-02_01.txt -> terminal_sessions/Terminal 2024-11-02_01.txt
+	renamed:    Terminal Sessions/Terminal 2024-11-04_01.txt -> terminal_sessions/Terminal 2024-11-04_01.txt
+	renamed:    Terminal Sessions/Terminal 2024-11-05_01.txt -> terminal_sessions/Terminal 2024-11-05_01.txt
+	renamed:    Terminal Sessions/Terminal 2024-11-07_01.txt -> terminal_sessions/Terminal 2024-11-07_01.txt
+
+devinryback@STARSHIP git_ruby_intro_book % git commit -m "Update terminal sessions"
+[main 839fea0] Update terminal sessions
+ 6 files changed, 3855333 deletions(-)
+ delete mode 100644 Terminal Sessions/Terminal 2024-11-08_01.txt
+ create mode 100644 terminal_sessions/.DS_Store
+ rename {Terminal Sessions => terminal_sessions}/Terminal 2024-11-02_01.txt (100%)
+ rename {Terminal Sessions => terminal_sessions}/Terminal 2024-11-04_01.txt (100%)
+ rename {Terminal Sessions => terminal_sessions}/Terminal 2024-11-05_01.txt (100%)
+ rename {Terminal Sessions => terminal_sessions}/Terminal 2024-11-07_01.txt (100%)
+devinryback@STARSHIP git_ruby_intro_book % git push
+Enumerating objects: 24, done.
+Counting objects: 100% (24/24), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (19/19), done.
+Writing objects: 100% (19/19), 391.92 KiB | 1.10 MiB/s, done.
+Total 19 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+remote: error: Trace: 11bc609ddbc48af4c458381c47cfbd8ad33f3af5bb1438edde4648311348a65a
+remote: error: See https://gh.io/lfs for more information.
+remote: error: File Terminal Sessions/Terminal 2024-11-08_01.txt is 134.49 MB; this exceeds GitHub's file size limit of 100.00 MB
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+To https://github.com/devinryback/git_ruby_intro_book.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://github.com/devinryback/git_ruby_intro_book.git'
+devinryback@STARSHIP git_ruby_intro_book % cd terminal_sessions
+devinryback@STARSHIP terminal_sessions % ls
+Terminal 2024-11-02_01.txt	Terminal 2024-11-05_01.txt
+Terminal 2024-11-04_01.txt	Terminal 2024-11-07_01.txt
+devinryback@STARSHIP terminal_sessions % git rm --cached "Terminal Sessions/Terminal 2024-11-08_01.txt"
+fatal: pathspec 'Terminal Sessions/Terminal 2024-11-08_01.txt' did not match any files
+devinryback@STARSHIP terminal_sessions % git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+devinryback@STARSHIP terminal_sessions % git commit -m "Remove large file from history"
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+devinryback@STARSHIP terminal_sessions % git push
+Enumerating objects: 24, done.
+Counting objects: 100% (24/24), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (19/19), done.
+Writing objects: 100% (19/19), 391.92 KiB | 1.08 MiB/s, done.
+Total 19 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+remote: error: Trace: ee07f9c3d6e6fd9ce6aa386d066e880ef890d975f5fe5a143feb1046c2f74fd1
+remote: error: See https://gh.io/lfs for more information.
+remote: error: File Terminal Sessions/Terminal 2024-11-08_01.txt is 134.49 MB; this exceeds GitHub's file size limit of 100.00 MB
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+To https://github.com/devinryback/git_ruby_intro_book.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://github.com/devinryback/git_ruby_intro_book.git'
+devinryback@STARSHIP terminal_sessions % git lfs install
+git: 'lfs' is not a git command. See 'git --help'.
+
+The most similar command is
+	refs
+devinryback@STARSHIP terminal_sessions % git filter-branch --force --index-filter \
+"git rm --cached --ignore-unmatch 'Terminal Sessions/Terminal 2024-11-08_01.txt'" \
+--prune-empty --tag-name-filter cat -- --all
+WARNING: git-filter-branch has a glut of gotchas generating mangled history
+	 rewrites.  Hit Ctrl-C before proceeding to abort, then use an
+	 alternative filtering tool such as 'git filter-repo'
+	 (https://github.com/newren/git-filter-repo/) instead.  See the
+	 filter-branch manual page for more details; to squelch this warning,
+	 set FILTER_BRANCH_SQUELCH_WARNING=1.
+Proceeding with filter-branch...
+
+You need to run this command from the toplevel of the working tree.
+devinryback@STARSHIP terminal_sessions % cd ..
+devinryback@STARSHIP git_ruby_intro_book % brew install git-filter-repo
+==> Auto-updating Homebrew...
+Adjust how often this is run with HOMEBREW_AUTO_UPDATE_SECS or disable with
+HOMEBREW_NO_AUTO_UPDATE. Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+==> Auto-updated Homebrew!
+Updated 2 taps (homebrew/core and homebrew/cask).
+==> New Formulae
+azqr                    kanata                  mkdocs-material
+decasify                libmsquic               pytest
+dipc                    libtatsu                toml2json
+==> New Casks
+acronis-true-image-cleanup-tool      hyperconnect
+bobhelper                            jet-pilot
+default-handler                      lunatask
+djuced                               neohtop
+font-eldur                           viz
+font-recursive-desktop               whimsical
+
+You have 2 outdated formulae installed.
+
+==> Downloading https://ghcr.io/v2/homebrew/core/git-filter-repo/manifes
+################################################################# 100.0%
+==> Fetching dependencies for git-filter-repo: mpdecimal, sqlite, xz and python@3.13
+==> Downloading https://ghcr.io/v2/homebrew/core/mpdecimal/manifests/4.0
+################################################################# 100.0%
+==> Fetching mpdecimal
+==> Downloading https://ghcr.io/v2/homebrew/core/mpdecimal/blobs/sha256:
+################################################################# 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/sqlite/manifests/3.47.0
+################################################################# 100.0%
+==> Fetching sqlite
+==> Downloading https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:f47
+################################################################# 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/xz/manifests/5.6.3
+################################################################# 100.0%
+==> Fetching xz
+==> Downloading https://ghcr.io/v2/homebrew/core/xz/blobs/sha256:743c3d3
+################################################################# 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/python/3.13/manifests/3
+################################################################# 100.0%
+==> Fetching python@3.13
+==> Downloading https://ghcr.io/v2/homebrew/core/python/3.13/blobs/sha25
+################################################################# 100.0%
+==> Fetching git-filter-repo
+==> Downloading https://ghcr.io/v2/homebrew/core/git-filter-repo/blobs/s
+################################################################# 100.0%
+==> Installing dependencies for git-filter-repo: mpdecimal, sqlite, xz and python@3.13
+==> Installing git-filter-repo dependency: mpdecimal
+==> Downloading https://ghcr.io/v2/homebrew/core/mpdecimal/manifests/4.0
+Already downloaded: /Users/devinryback/Library/Caches/Homebrew/downloads/7b63c3b34bee402290af49fac829a6682ab45ea5c9258b6fe03b590a03a4c4a9--mpdecimal-4.0.0-1.bottle_manifest.json
+==> Pouring mpdecimal--4.0.0.arm64_sequoia.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/mpdecimal/4.0.0: 22 files, 641.3KB
+==> Installing git-filter-repo dependency: sqlite
+==> Downloading https://ghcr.io/v2/homebrew/core/sqlite/manifests/3.47.0
+Already downloaded: /Users/devinryback/Library/Caches/Homebrew/downloads/2acd26e317f3463995d9c8df6d1f6660834a2adccf6448e6166f34a89d607683--sqlite-3.47.0.bottle_manifest.json
+==> Pouring sqlite--3.47.0.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/sqlite/3.47.0: 12 files, 4.9MB
+==> Installing git-filter-repo dependency: xz
+==> Downloading https://ghcr.io/v2/homebrew/core/xz/manifests/5.6.3
+Already downloaded: /Users/devinryback/Library/Caches/Homebrew/downloads/e68799185cc17334108ba286ba8c3df0587c9fd8375647d85f7157b62a797599--xz-5.6.3.bottle_manifest.json
+==> Pouring xz--5.6.3.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/xz/5.6.3: 96 files, 2.0MB
+==> Installing git-filter-repo dependency: python@3.13
+==> Downloading https://ghcr.io/v2/homebrew/core/python/3.13/manifests/3
+Already downloaded: /Users/devinryback/Library/Caches/Homebrew/downloads/7ba530a5c7674d67e1f459ede0a9601a16a7332aecba1043bc844a921cde8b06--python@3.13-3.13.0_1-1.bottle_manifest.json
+==> Pouring python@3.13--3.13.0_1.arm64_sequoia.bottle.1.tar.gz
+==> /opt/homebrew/Cellar/python@3.13/3.13.0_1/bin/python3.13 -Im ensurep
+==> /opt/homebrew/Cellar/python@3.13/3.13.0_1/bin/python3.13 -Im pip ins
+🍺  /opt/homebrew/Cellar/python@3.13/3.13.0_1: 3,255 files, 65.0MB
+==> Installing git-filter-repo
+==> Pouring git-filter-repo--2.45.0.all.bottle.2.tar.gz
+🍺  /opt/homebrew/Cellar/git-filter-repo/2.45.0: 9 files, 294KB
+==> Running `brew cleanup git-filter-repo`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+devinryback@STARSHIP git_ruby_intro_book % git filter-repo --path "Terminal Sessions/Terminal 2024-11-08_01.txt" --invert-paths
+Aborting: Refusing to destructively overwrite repo history since
+this does not look like a fresh clone.
+  (expected freshly packed repo)
+Please operate on a fresh clone instead.  If you want to proceed
+anyway, use --force.
+devinryback@STARSHIP git_ruby_intro_book % git clone https://github.com/devinryback/git_ruby_intro_book.git
+cd git_ruby_intro_book
+Cloning into 'git_ruby_intro_book'...
+remote: Enumerating objects: 95, done.
+remote: Counting objects: 100% (95/95), done.
+remote: Compressing objects: 100% (81/81), done.
+remote: Total 95 (delta 13), reused 90 (delta 8), pack-reused 0 (from 0
+Receiving objects: 100% (95/95), 29.85 KiB | 261.00 KiB/s, done.
+Resolving deltas: 100% (13/13), done.
+devinryback@STARSHIP git_ruby_intro_book % ls
+01_prep			06_loops_iterators	LICENSE.md
+02_basics		07_arrays		README.md
+03_variables		08_hashes		Terminal Sessions
+04_methods		09_more_stuff
+05_flow_control		10_exercises
+devinryback@STARSHIP git_ruby_intro_book % cs -a
+zsh: command not found: cs
+devinryback@STARSHIP git_ruby_intro_book % ls -a
+.			03_variables		09_more_stuff
+..			04_methods		10_exercises
+.git			05_flow_control		LICENSE.md
+.gitignore		06_loops_iterators	README.md
+01_prep			07_arrays		Terminal Sessions
+02_basics		08_hashes
+devinryback@STARSHIP git_ruby_intro_book % git filter-repo --path "Terminal Sessions/Terminal 2024-11-08_01.txt" --invert-paths
+Parsed 9 commits
+New history written in 0.07 seconds; now repacking/cleaning...
+Repacking your repo and cleaning out old unneeded objects
+HEAD is now at e4b3e0c Add completed exexercises for 06 Loop & Iterators
+Enumerating objects: 95, done.
+Counting objects: 100% (95/95), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (76/76), done.
+Writing objects: 100% (95/95), done.
+Total 95 (delta 13), reused 95 (delta 13), pack-reused 0 (from 0)
+Completely finished after 0.14 seconds.
+devinryback@STARSHIP git_ruby_intro_book % git push origin main --force
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+devinryback@STARSHIP git_ruby_intro_book % git remote add origin https://github.com/devinryback/git_ruby_intro_book.git
+devinryback@STARSHIP git_ruby_intro_book % git remote -v 
+origin	https://github.com/devinryback/git_ruby_intro_book.git (fetch)
+origin	https://github.com/devinryback/git_ruby_intro_book.git (push)
+devinryback@STARSHIP git_ruby_intro_book % git push origin main --force
+Everything up-to-date
+devinryback@STARSHIP git_ruby_intro_book % git log
+commit e4b3e0c3b20c8cba9b6b2873c285e7d6e521380d (HEAD -> main, origin/main)
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Fri Nov 8 17:03:20 2024 -0500
+
+    Add completed exexercises for 06 Loop & Iterators
+
+commit 3b8e17215601c5b13e401c313f50f0c79d824c08
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Fri Nov 8 13:05:15 2024 -0500
+
+    Add completed exercises for 05 Flow Control
+
+commit 86e41ab3345da974db9d3b44b6bd6c1bc8dac54b
+Author: Devin Ryback <devinryback@protonmail.com>
+Date:   Thu Nov 7 11:40:24 2024 -0500
+
+    Add completed exercises for 04 Methods
+
+devinryback@STARSHIP git_ruby_intro_book % git status
+On branch main
+nothing to commit, working tree clean
+devinryback@STARSHIP git_ruby_intro_book % ls
+01_prep			06_loops_iterators	LICENSE.md
+02_basics		07_arrays		README.md
+03_variables		08_hashes		Terminal Sessions
+04_methods		09_more_stuff
+05_flow_control		10_exercises
+devinryback@STARSHIP git_ruby_intro_book % cd 07_arrays
+devinryback@STARSHIP 07_arrays % ls
+exercise_01.rb
+devinryback@STARSHIP 07_arrays % git reflog
+devinryback@STARSHIP 07_arrays % 
