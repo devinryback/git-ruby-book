@@ -1,0 +1,15 @@
+# divide.rb
+
+def divide(number, divisor)
+  begin
+    number / divisor
+  rescue ZeroDivisionError => e
+    e.message
+  end
+end
+
+puts divide(16, 4)
+puts divide(4, 0)
+puts divide(14, 7)
+
+# ^^ Here we are rescuing the ZeroDivisionError and saving it into a variable e. We then have access to the message method that the ZeroDivisionError object has available.
