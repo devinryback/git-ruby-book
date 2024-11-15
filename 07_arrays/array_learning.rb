@@ -86,7 +86,7 @@ my_pets = ["cat", "dog", "bird", "cat", "snake"]
 my_pets.delete("cat")
 # => ["dog", "bird", "snake"]
 
-# ^^ The delete method dstructively removes all instances of the provided value from an array.
+# ^^ The delete method destructively removes all instances of the provided value from an array.
 
 
 
@@ -151,7 +151,7 @@ b.unshift(1)
 a == b
 # => true
 
-# ^^ The unshift method is like the puch method, but adds a value to the start of the array.
+# ^^ The unshift method is like the push method, but adds a value to the start of the array.
 
 
 
